@@ -5,6 +5,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
+Vue.use(ElementUI)
 require('./bootstrap');
 
 window.Vue = require('vue');
