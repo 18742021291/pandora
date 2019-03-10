@@ -12,7 +12,9 @@ window.Vue = require('vue');
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-Vue.use(ElementUI)
+import App from './App.vue'; //添加的内容
+import router from './router';//添加的内容
+Vue.use(ElementUI);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -23,5 +25,7 @@ Vue.use(ElementUI)
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router,//添加的内容
+    render:h => h(App)//添加的内容
 });
