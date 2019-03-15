@@ -22,6 +22,7 @@
     "vue-router": "^3.0.1"
   },
   "dependencies": {
+    "cos-nodejs-sdk-v5": "^2.5.7",
     "element-ui": "^2.6.1"
   }
 }
