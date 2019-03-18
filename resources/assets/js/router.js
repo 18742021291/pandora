@@ -7,7 +7,7 @@ export default new VueRouter({
     routes: [
         {
             name:"index",
-            path:'/',
+            path:'/abcd',
             component: resolve =>void(require(['./components/ExampleComponent.vue'], resolve))
         },
     ]

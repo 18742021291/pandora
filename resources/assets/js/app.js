@@ -26,6 +26,4 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 
 const app = new Vue({
     el: '#app',
-    router,//添加的内容
-    render:h => h(App)//添加的内容
 });

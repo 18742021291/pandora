@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Qcloud\Cos\Client;
 class IndexController extends Controller
 {
+    public function index(){
+        $questions=array();
+        return view('index', compact('questions'));
+    }
     public $cosClient;
     //
     public function init()
