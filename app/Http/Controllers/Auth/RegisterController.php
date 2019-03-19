@@ -67,6 +67,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'imgurl' => '/images/headImg/elyse.jpg',
+            'confirmation_token' => str_random(40),
+            'api_token'=>str_random(60),
+            'setting'=> ['city'=>'','site'=>'','github'=>'','bio'=>'']
         ]);
     }
 }
