@@ -21,7 +21,7 @@
         @if(Auth::check())
             window.Zhihu = {
             name: "{{Auth::user()->name}}",
-            avatar: "{{Auth::user()->avatar}}"
+            imgurl: "{{Auth::user()->imgurl}}"
         }
         @endif
     </script>
@@ -52,21 +52,21 @@
 
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="ask-question"><a class="ui button blue" href="/questions/create"><i
+                    <li class="ask-question"><a class="ui button blue" href="#"><i
                                     class="fa fa-paint-brush fa-icon-lg"></i>反馈问题</a></li>
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a class="nav-li-login" href="{{ url('/login') }}">登 录</a></li>
                         <li><a class="nav-li-login" href="{{ url('/register') }}">注 册</a></li>
                     @else
-                        <li>
-                            <a href="{{url('/messages')}}" class="user-notify-bell">
-                                <i class="fa fa-bell"></i>
-                                @if(Auth::user()->unreadNotifications->count()!==0)
-                                    <span class="badge bell-badge">{{\Auth::user()->unreadNotifications->count()}}</span>
-                                @endif
-                            </a>
-                        </li>
+                        {{--<li>--}}
+                            {{--<a href="{{url('/messages')}}" class="user-notify-bell">--}}
+                                {{--<i class="fa fa-bell"></i>--}}
+                                {{--@if(Auth::user()->unreadNotifications->count()!==0)--}}
+                                    {{--<span class="badge bell-badge">{{\Auth::user()->unreadNotifications->count()}}</span>--}}
+                                {{--@endif--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
 
                         <li>
                             <a href="#">
@@ -77,26 +77,26 @@
                             <a class="nav-header-avatar dropdown-toggle nav-user-avatar" data-toggle="dropdown"
                                role="button"
                                aria-expanded="false" style="padding: 6px 15px 6px 0px;">
-                                <img src="{{Auth::user()->imgurl}}">
+                                <img src="{{Auth::user()->xxx}}">
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="/people/{{Auth::user()->name}}"><i class="fa fa-user fa-icon-lg"></i> 我的主页</a>
+                                    <a href="#"><i class="fa fa-user fa-icon-lg"></i> 我的主页</a>
                                 </li>
                                 <li>
-                                    <a href="/avatar"><i class="fa fa-cloud fa-icon-lg"></i>修改头像</a>
+                                    <a href="#"><i class="fa fa-cloud fa-icon-lg"></i>修改头像</a>
                                 </li>
                                 <li>
-                                    <a href="/password"><i class="fa fa-cog fa-icon-lg"></i>修改密码</a>
+                                    <a href="#"><i class="fa fa-cog fa-icon-lg"></i>修改密码</a>
                                 </li>
                                 <li>
-                                    <a href="/setting"> <i class="fa fa-cogs fa-icon-lg"></i>个人设置</a>
+                                    <a href="#"> <i class="fa fa-cogs fa-icon-lg"></i>个人设置</a>
                                 </li>
-                                @if(Auth::user()->canEnterBack())
+                                {{--@if(Auth::user()->canEnterBack())--}}
                                     <li>
-                                        <a href="/dashboard"> <i class="fa fa-coffee fa-icon-lg"></i>后台管理</a>
+                                        <a href="#"> <i class="fa fa-coffee fa-icon-lg"></i>后台管理</a>
                                     </li>
-                                @endif
+                                {{--@endif--}}
                                 <li role="separator" class="divider"></li>
                                 <li>
                                     <a href="{{ url('/logout') }}"
@@ -129,7 +129,7 @@
 </div>
 
 <!-- Scripts -->
-{{--<script src="{{elixir('/js/app.js')}}"></script>--}}
+<script src="{{elixir('/js/app.js')}}"></script>
 
 <script>
     $('#flash-overlay-modal').modal();
