@@ -11,6 +11,7 @@ class User extends Authenticatable
 
     /**
      * The table that model represents.
+     *
      * @var string
      */
     protected $table = 'users';
@@ -28,7 +29,8 @@ class User extends Authenticatable
         'imgurl',
         'remember_token',
         'setting',
-        'api_token'
+        'api_token',
+        'role',
     ];
 
     /**
@@ -42,6 +44,6 @@ class User extends Authenticatable
     ];
 
     protected $casts = [
-        'setting'=>'array'
+        'setting' => 'array',
     ];
 }

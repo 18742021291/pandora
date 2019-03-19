@@ -31,7 +31,8 @@
     <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -51,7 +52,8 @@
 
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="ask-question"><a class="ui button blue" href="/questions/create"><i class="fa fa-paint-brush fa-icon-lg"></i>反馈问题</a></li>
+                    <li class="ask-question"><a class="ui button blue" href="/questions/create"><i
+                                    class="fa fa-paint-brush fa-icon-lg"></i>反馈问题</a></li>
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a class="nav-li-login" href="{{ url('/login') }}">登 录</a></li>
@@ -72,9 +74,10 @@
                             </a>
                         </li>
                         <li>
-                            <a class="nav-header-avatar dropdown-toggle nav-user-avatar" data-toggle="dropdown" role="button"
+                            <a class="nav-header-avatar dropdown-toggle nav-user-avatar" data-toggle="dropdown"
+                               role="button"
                                aria-expanded="false" style="padding: 6px 15px 6px 0px;">
-                                <img src="{{Auth::user()->avatar}}">
+                                <img src="{{Auth::user()->imgurl}}">
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
