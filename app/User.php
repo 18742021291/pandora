@@ -12,14 +12,14 @@ class User extends Authenticatable
     /**
      * The table that model represents.
      *
-     * @var string
+     * @var string $table
      */
     protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array $fillable
      */
     protected $fillable = [
         'name',
@@ -36,14 +36,28 @@ class User extends Authenticatable
     /**
      * The attributes that should be hidden for arrays.
      *
-     * @var array
+     * @var array $hidden
      */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
+    /**
+     * @var array $casts
+     */
     protected $casts = [
         'setting' => 'array',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function files(){
+        return $this->hasMany(File::class,'user_id','id');
+    }
+
+    public function belongsToRole(){
+        return $this->belongsTo('Roles','role_id','id');
+    }
 }
