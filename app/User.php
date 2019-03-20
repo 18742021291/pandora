@@ -9,6 +9,10 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+//1、一对一使用方法：hasOne()
+//2、一对多使用方法：hasMany()
+//3、多对一使用方法：belongsTo()
+//4、多对多使用方法：belongsToMany()
     /**
      * The table that model represents.
      *
