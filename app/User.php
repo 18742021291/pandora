@@ -64,4 +64,8 @@ class User extends Authenticatable
     public function belongsToRole(){
         return $this->belongsTo('Roles','role_id','id');
     }
+
+    public function setting(){
+        return new Setting($this);
+    }
 }

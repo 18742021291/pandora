@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'IndexController@index');
+Route::get("/setting",'SettingController@index');//用户设置面板
+Route::post("/setting",'SettingController@save');//用户设置保存
 Route::auth();
 Route::group(['namespace' => 'Admin'], function () {
     Route::get('/dashboard', 'AdminController@index')->name('admin.index'); //后台首页

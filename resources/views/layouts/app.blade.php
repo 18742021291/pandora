@@ -90,7 +90,7 @@
                                     <a href="#"><i class="fa fa-cog fa-icon-lg"></i>修改密码</a>
                                 </li>
                                 <li>
-                                    <a href="#"> <i class="fa fa-cogs fa-icon-lg"></i>个人设置</a>
+                                    <a href="{{url('/setting')}}"> <i class="fa fa-cogs fa-icon-lg"></i>个人设置</a>
                                 </li>
                                 {{--@if(Auth::user()->canEnterBack())--}}
                                     <li>

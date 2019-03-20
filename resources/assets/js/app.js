@@ -9,11 +9,14 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+Vue.http.interceptors.push((request, next) => {
+    request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
+    request.headers.set('Authorization', Laravel.apiToken);
 
-import ElementUI from 'element-ui'
+    next();
+});
+
 import 'element-ui/lib/theme-chalk/index.css'
-import App from './App.vue'; //添加的内容
-import router from './router';//添加的内容
 Vue.use(ElementUI);
 
 /**
@@ -22,7 +25,14 @@ Vue.use(ElementUI);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('example', require('./components/Example.vue'));
+Vue.component('question-follow-button', require('./components/QuestionFollowButton.vue'));
+Vue.component('user-follow-button', require('./components/UserFollowButton.vue'));
+Vue.component('user-vote-button', require('./components/UserVoteButton.vue'));
+Vue.component('send-message', require('./components/SendMessage.vue'));
+Vue.component('comments', require('./components/CommentsForm.vue'));
+Vue.component('user-avatar', require('./components/Avatar.vue'));
+Vue.component('question-like', require('./components/QuestionLike.vue'));
 
 const app = new Vue({
     el: '#app',
