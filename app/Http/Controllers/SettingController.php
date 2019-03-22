@@ -15,8 +15,9 @@ class SettingController extends Controller
         return view('users.setting');
     }
 
-    public function saveSetting(Request $request){
-        return \Auth::user()->setting()->merge($request->all());
+    public function save(Request $request){
+        \Auth::user()->setting()->merge($request->all());
+        return back();
     }
 
 
