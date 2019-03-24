@@ -1,5 +1,5 @@
 <?php
-
+namespace app\Utils;
 use Qcloud\Cos\Client;
 
 /**
