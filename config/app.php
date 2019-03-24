@@ -167,6 +167,8 @@ return [
         /*
          * Package Service Providers...
          */
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+
 
         /*
          * Application Service Providers...

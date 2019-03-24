@@ -94,7 +94,7 @@
                                 </li>
                                 {{--@if(Auth::user()->canEnterBack())--}}
                                     <li>
-                                        <a href="#"> <i class="fa fa-coffee fa-icon-lg"></i>后台管理</a>
+                                        <a href="/dashboard"> <i class="fa fa-coffee fa-icon-lg"></i>后台管理</a>
                                     </li>
                                 {{--@endif--}}
                                 <li role="separator" class="divider"></li>
